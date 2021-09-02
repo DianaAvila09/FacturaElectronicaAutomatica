@@ -1,0 +1,12 @@
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\BasculaRevuelta.vbprojAssemblyReference.cache
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\BasculaRevuelta.vbproj.GenerateResource.cache
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\BasculaRevuelta.vbproj.CoreCompileInputs.cache
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\WindowsApp1\obj\Debug\WindowsApp1.pdb
