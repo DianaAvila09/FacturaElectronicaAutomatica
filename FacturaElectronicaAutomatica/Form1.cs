@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,7 +30,8 @@ namespace FacturaElectronicaAutomatica
             try
             {
                 //Ahora nos toca implementar el código que se encargará de conectarse a la pagina web y obtener el documento HTML.
-                string sUrl = "http://estdtcaseta3:8060/Revuelta/InformacionBascula";
+                //string sUrl = "http://estdtcaseta3:8060/Revuelta/InformacionBascula";
+                string sUrl = "http://localhost:54828/test.html";
                 Encoding objEncoding = Encoding.GetEncoding("ISO-8859-1");
                 CookieCollection objCookies = new CookieCollection();
 
@@ -67,13 +69,33 @@ namespace FacturaElectronicaAutomatica
                 HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
                 document.LoadHtml(sGetResponse);
 
-                //Como se puede apreciar, se ha cargado la variable sGetResponse, que contiene el
-                //    código HTML, como  un objeto de tipo HtmlDocument. Con esto ya podemos navegar 
-                //        entre los TAG'S HTML y poder quitar los datos redundante y solo obtener los que 
-                //necesitamos. Estos datos los colocaremos en una tabla que contendrá 3 columnas (día, compra y venta).
+
+
+
+
+                //AQUI TRANSFORMA EL HTML EN UN DATATABLE
+
+
+                HtmlNodeCollection nodosTabla = document.DocumentNode.SelectNodes("//table");
+                if (nodosTabla.Any())
+                {
+                    DataTable dTable = HTMLTable_to_DataTable(nodosTabla.FirstOrDefault().OuterHtml);
+                }
+                    
+
+
+
+
+
+
+
+
+
+
+
+
 
                 HtmlNodeCollection NodesTr = document.DocumentNode.SelectNodes("//table[@class='class=\"form-table\"']//tr");
-
 
                 if (NodesTr != null)
                 {
@@ -121,6 +143,63 @@ namespace FacturaElectronicaAutomatica
             }
         }
 
-       
+        public static DataTable HTMLTable_to_DataTable(string HTML)
+        {
+            DataTable dt = null;
+            DataRow dr = null;
+            DataColumn dc = null;
+            string TableExpression = "<table[^>]*>(.*?)</table>";
+            string HeaderExpression = "<th[^>]*>(.*?)</th>";
+            string RowExpression = "<tr[^>]*>(.*?)</tr>";
+            string ColumnExpression = "<td[^>]*>(.*?)</td>";
+            bool HeadersExist = false;
+            int iCurrentColumn = 0;
+            int iCurrentRow = 0;
+            MatchCollection Tables = Regex.Matches(HTML, TableExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            foreach (Match Table in Tables)
+            {
+                iCurrentRow = 0;
+                HeadersExist = false;
+                dt = new DataTable();
+                if (Table.Value.Contains("<th"))
+                {
+                    HeadersExist = true;
+                    MatchCollection Headers = Regex.Matches(Table.Value, HeaderExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                    foreach (Match Header in Headers)
+                        dt.Columns.Add(Header.Groups[1].ToString());
+                }
+                else
+                {
+                    for (int iColumns = 1; iColumns <= Regex.Matches(Regex.Matches(Regex.Matches(Table.Value, TableExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase)[0].ToString(), RowExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase)[0].ToString(), ColumnExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase).Count; iColumns++)
+                    {
+                        dt.Columns.Add("Column " + iColumns);
+                    }
+                }
+                MatchCollection Rows = Regex.Matches(Table.Value, RowExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                foreach (Match Row in Rows)
+                {
+                    if (!(iCurrentRow == 0 & HeadersExist == true))
+                    {
+                        dr = dt.NewRow();
+                        iCurrentColumn = 0;
+                        MatchCollection Columns = Regex.Matches(Row.Value, ColumnExpression, RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                        foreach (Match Column in Columns)
+                        {
+                            DataColumnCollection columns = dt.Columns;
+                            if (!columns.Contains("Column " + iCurrentColumn))
+                            {
+                                dt.Columns.Add("Column " + iCurrentColumn);
+                            }
+                            dr[iCurrentColumn] = Column.Groups[1].ToString();
+                            iCurrentColumn += 1;
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                    iCurrentRow += 1;
+                }
+            }
+            return (dt);
+        }
+
     }
 }

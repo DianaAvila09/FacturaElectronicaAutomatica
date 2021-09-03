@@ -12,3 +12,17 @@ C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\FacturaElectronicaAu
 C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\HtmlAgilityPack.xml
 C:\Users\dianavil\source\repos\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.csproj.CopyComplete
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\FacturaElectronicaAutomatica.exe.config
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\FacturaElectronicaAutomatica.exe
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\FacturaElectronicaAutomatica.pdb
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\HtmlAgilityPack.dll
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\bin\Debug\HtmlAgilityPack.xml
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.Form1.resources
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.Properties.Resources.resources
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.csproj.GenerateResource.cache
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.csproj.CoreCompileInputs.cache
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.csproj.CopyComplete
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.exe
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.pdb
+C:\Users\mrocha\Documents\repo\emm\FacturaElectronicaAutomatica\FacturaElectronicaAutomatica\obj\Debug\FacturaElectronicaAutomatica.csproj.AssemblyReference.cache
